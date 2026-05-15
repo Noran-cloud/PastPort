@@ -1,34 +1,78 @@
 import 'package:flutter/material.dart';
-import 'package:pastport/core/utils/app_colors.dart';
-import 'package:pastport/core/utils/app_images.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:pastport/core/extensions/helper_extension.dart';
+import 'package:pastport/core/utils/app_router.dart';
+import 'package:pastport/core/utils/app_strings.dart';
+import 'package:pastport/core/utils/app_styles.dart';
+import 'package:pastport/splash_onboarding/domain/entities/onboarding.dart';
+import 'package:pastport/splash_onboarding/presentation/controllers/onboarding_cubit/onboarding_cubit.dart';
+import 'package:pastport/splash_onboarding/presentation/controllers/onboarding_cubit/onboarding_states.dart';
 
 class OnboardingChangeScreenWidget extends StatelessWidget {
-  const OnboardingChangeScreenWidget({super.key});
+  const OnboardingChangeScreenWidget({super.key, required this.model});
+
+  final Onboarding model;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(right: 45.0, bottom: 50.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          CircleAvatar(
-            radius: 27,
-            backgroundColor: Color(0xffCBB98E).withValues(
-                alpha: .6
+    return BlocBuilder<OnBoardingCubit, OnBoardingStates>(
+      builder: (BuildContext context, OnBoardingStates state) {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Stack(
+              alignment: Alignment.topRight,
+              children: [
+                Image.asset(
+                  model.image,
+                  height: context.height * .5,
+                  width: context.width,
+                  fit: BoxFit.cover,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 33.0, right: 20.0),
+                  child: GestureDetector(
+                    onTap: ()
+                    {
+                      context.go(AppRouter.kAuthView);
+                    },
+                    child: Text(
+                      AppStrings.skipText,
+                      style: Styles.styleMedium16(context).copyWith(
+                        fontSize: 16,
+                        color: Color(0xE9E3D1D9),
+                      ),),
+                  ),
+                ),
+              ],
             ),
-            child: CircleAvatar(
-              radius: 23,
-              backgroundColor: AppColors.whiteColor,
-              child: CircleAvatar(
-                backgroundColor: Color(0xCBB98E66),
-                radius: 20,
-                child: Center(child: Image.asset(Assets.changeOnboardingScreenIcon, height: 100, width: 100,)),
+            SizedBox(height: 33,),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    textAlign: TextAlign.center,
+                    model.title,
+                    style: Styles.styleBold30(context).copyWith(fontSize: 30),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: Text(
+                      textAlign: TextAlign.center,
+                      model.description,
+                      style: Styles.styleRegular15(context).copyWith(fontSize: 15),
+                    ),
+                  ),
+                ],
               ),
             ),
-          ),
-        ],
-      ),
+          ],
+        );
+      },
+
     );
   }
 }

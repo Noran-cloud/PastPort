@@ -63,7 +63,6 @@ class OnboardingScreen extends StatelessWidget {
                         {
                           if(OnBoardingCubit.get(context).currentIndex == 2)
                           {
-                            print("Current index is : {OnBoardingCubit.get(context).currentIndex}");
                             context.go(AppRouter.kAuthView);                          } else
                           {
                             OnBoardingCubit.get(context).controller.nextPage(

@@ -9,41 +9,41 @@ class TopPartLoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: context.height * .55,
-      decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.blackColor.withValues(
-              alpha: 0.2,
-            ),
-            spreadRadius: 0,
-            blurRadius: 15,
-            offset: const Offset(4, -5),
-          ),
-        ],
-      ),
-      child: ClipPath(
-        clipper: TopCurveClipper(),
-        child: Container(
-          width: double.infinity,
+        return Container(
+          height: context.height * .55,
           decoration: BoxDecoration(
-            color: AppColors.primaryColor,
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(33),
-              topRight: Radius.circular(33),
+            boxShadow: [
+              BoxShadow(
+                color: AppColors.blackColor.withValues(
+                  alpha: 0.2,
+                ),
+                spreadRadius: 0,
+                blurRadius: 15,
+                offset: const Offset(4, -5),
+              ),
+            ],
+          ),
+          child: ClipPath(
+            clipper: TopCurveClipper(),
+            child: Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: AppColors.primaryColor,
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(33),
+                  topRight: Radius.circular(33),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  top: 16.0,
+                  right: 26,
+                  left: 26,
+                ),
+                child: ContentOfFirstContainer(),
+              ),
             ),
           ),
-          child: Padding(
-            padding: const EdgeInsets.only(
-              top: 16.0,
-              right: 26,
-              left: 26,
-            ),
-            child: ContentOfFirstContainer(),
-          ),
-        ),
-      ),
-    );
+        );
   }
 }

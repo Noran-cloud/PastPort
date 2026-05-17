@@ -21,6 +21,7 @@ class ContentOfEmailVerificationScreen extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 42.0),
           child: CustomTextField(
+            controller: TextEditingController(),
             keyboardType: TextInputType.emailAddress,
             height: 40.0,
             radius: 8,

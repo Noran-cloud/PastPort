@@ -11,32 +11,32 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context) => LoginCubit()..loginUserWithEmailAndPassword(mail: "batta4doha@gmail.com", pass: "Fatma1492004**"),
-      child: BlocConsumer <LoginCubit, LoginStates>(
-        builder: (BuildContext context, LoginStates state) {
-          return Scaffold(
-            resizeToAvoidBottomInset: true,
-            body: SafeArea(
-              child: SingleChildScrollView(
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    right: 20,
-                    left: 20,
-                    top: 48,
-                    bottom: 20,
-                  ),
-                  child: Column(
-                    children: [
-                      TopPartLoginScreen(),
-                      BottomPartLoginScreen(),
-                    ],
-                  ),
+      create: (BuildContext context) => LoginCubit(),
+      child: BlocBuilder<LoginCubit , LoginStates>(builder: (BuildContext context, state)
+      {
+        return Scaffold(
+          resizeToAvoidBottomInset: true,
+          body: SafeArea(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  right: 20,
+                  left: 20,
+                  top: 48,
+                  bottom: 20,
+                ),
+                child: Column(
+                  children: [
+                    TopPartLoginScreen(),
+                    BottomPartLoginScreen(),
+                  ],
                 ),
               ),
             ),
-          );
-        },
-        listener: (BuildContext context, LoginStates state) {  },
+          ),
+        );
+      },
+
       ),
     );
   }

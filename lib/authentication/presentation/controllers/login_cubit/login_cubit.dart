@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pastport/authentication/data/models/register_model.dart';
 import 'package:pastport/authentication/presentation/controllers/login_cubit/login_states.dart';
@@ -11,6 +12,9 @@ class LoginCubit extends Cubit<LoginStates>
 
   static LoginCubit get(context) => BlocProvider.of(context);
 
+
+  var mailController = TextEditingController();
+  var passController = TextEditingController();
 
   RegisterModel? registerModel;
 
@@ -26,11 +30,11 @@ class LoginCubit extends Cubit<LoginStates>
         },
     ).then((value)
     {
+      emit(LoginSuccessState());
       registerModel = RegisterModel.fromJson(value.data);
       print("data from login request is ${value.data}");
       LocalStorage.saveToken(registerModel!.token);
       print("token is : ${LocalStorage.token}");
-      emit(LoginSuccessState());
 
     }).catchError((error)
     {
@@ -38,5 +42,6 @@ class LoginCubit extends Cubit<LoginStates>
       emit(LoginFailureState());
     });
   }
+
 }
 

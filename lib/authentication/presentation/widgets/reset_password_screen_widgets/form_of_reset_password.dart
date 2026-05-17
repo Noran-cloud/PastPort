@@ -13,6 +13,7 @@ class FormOfResetPassword extends StatelessWidget {
     return Column(
       children: [
         CustomTextField(
+          controller: TextEditingController(),
           labelText: "Password",
           suffixIcon: Icons.visibility_off_outlined,
           height: 40,
@@ -22,6 +23,7 @@ class FormOfResetPassword extends StatelessWidget {
         ),
         SizedBox(height: 30),
         CustomTextField(
+          controller: TextEditingController(),
           labelText: "Confirm Password",
           suffixIcon: Icons.visibility_off_outlined,
           height: 40,

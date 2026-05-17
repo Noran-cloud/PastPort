@@ -32,17 +32,17 @@ class OnboardingChangeScreenWidget extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 33.0, right: 20.0),
-                  child: GestureDetector(
-                    onTap: ()
-                    {
-                      context.go(AppRouter.kAuthView);
-                    },
-                    child: Text(
-                      AppStrings.skipText,
-                      style: Styles.styleMedium16(context).copyWith(
-                        fontSize: 16,
-                        color: Color(0xE9E3D1D9),
-                      ),),
+                  child: TextButton(
+                      onPressed: ()
+                      {
+                        context.go(AppRouter.kAuthView);
+                      },
+                      child: Text(
+                    AppStrings.skipText,
+                    style: Styles.styleMedium16(context).copyWith(
+                      fontSize: 16,
+                      color: Color(0xE9E3D1D9),
+                    ),),
                   ),
                 ),
               ],

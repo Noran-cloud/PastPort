@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:pastport/authentication/presentation/screens/login_screen.dart';
 import 'package:pastport/authentication/presentation/screens/sign_up_screen.dart';
 import 'package:pastport/authentication/presentation/widgets/auth_selection_screen_widgets/bottom_curve_container.dart';
 import 'package:pastport/authentication/presentation/widgets/custom_button.dart';
@@ -27,7 +28,10 @@ class BodyOfAuthSelectionScreen extends StatelessWidget {
                 buttonColor: AppColors.secondaryColor,
                 radius: 5.0,
                 height: 45,
-                onPressed: () {},
+                onPressed: ()
+                {
+                  context.navigate(LoginScreen());
+                },
                 buttonText: AppStrings.loginText,
                 textStyle: Styles.styleSemiBold20(context).copyWith(fontSize: 20),
               ),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:pastport/core/extensions/helper_extension.dart';
 import 'package:pastport/core/utils/app_colors.dart';
 import 'package:pastport/core/utils/app_images.dart';
 import 'package:pastport/core/utils/app_styles.dart';
+import 'package:pastport/settings/presentation/screens/setting_screen.dart';
 
 class AppbarOfScreen extends StatelessWidget {
   const AppbarOfScreen({super.key});
@@ -30,9 +32,17 @@ class AppbarOfScreen extends StatelessWidget {
       actions: [
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: CircleAvatar(
-            radius: 21,
-            backgroundColor: AppColors.whiteColor,
+          child: GestureDetector(
+            onTap: ()
+            {
+              context.navigate(
+                SettingScreen(),
+              );
+            },
+            child: CircleAvatar(
+              radius: 21,
+              backgroundColor: AppColors.whiteColor,
+            ),
           ),
         ),
       ],

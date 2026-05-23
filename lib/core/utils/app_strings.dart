@@ -303,4 +303,13 @@ you have full range of motion.''';
   static const String lastUpdatedDesc = "December 4, 2025";
   static const String upToDateText = "Up to date";
 
+
+  /// Setting Screen
+
+  static const String editProfileText = "Edit profile";
+  static const String supportAboutText = "Support & About";
+  static const String mySubText = "My Subscription";
+  static const String actionsText = "Actions";
+  static const String logOutText = "Log out";
+
 }

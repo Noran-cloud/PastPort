@@ -234,4 +234,8 @@ class Assets
   /// assets/images/q_mark.png
   static const String questionMarkIcon = "assets/images/q_mark.png";
 
+  /// Assets for settingBackground
+  /// assets/images/setting_background.png
+  static const String settingBackground = "assets/images/setting_background.png";
+
 }

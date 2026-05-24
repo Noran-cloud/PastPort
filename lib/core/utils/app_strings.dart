@@ -318,4 +318,19 @@ you have full range of motion.''';
   static const String needToSignInAgain = "You'll need to sign in again to access your account.";
   static const String cancelText = "Cancel";
 
+  /// Report Problem Screen
+
+  static const String helpImproveText = "Help us Improve";
+  static const String helpImproveDescText = "Describe the problem you're experiencing in detail. This helps us fix it faster";
+  static const String requiredText = "(Required)";
+  static const String additionalInfoText = "Additional Information";
+  static const String appVersionVal = "1.0.0";
+  static const String mobileText = "Mobile";
+  static const String deviceText = "Device";
+  static const String dateText = "Date";
+  static const String dateValue = "December 22,2025";
+  static const String describeProblem = "Describe the problem ";
+  static const String minCharText = "minimum 20 characters";
+  static const String textFieldHint = "Please provide as much detail as possible about the problem you’re experiencing....";
+  static const String footerText = "Our team will review your report and may contact you for additional information if needed.";
 }

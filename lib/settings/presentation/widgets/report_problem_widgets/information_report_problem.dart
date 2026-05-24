@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pastport/core/utils/app_colors.dart';
 import 'package:pastport/core/utils/app_strings.dart';
 import 'package:pastport/core/utils/app_styles.dart';
@@ -14,7 +15,7 @@ class InformationReportProblem extends StatelessWidget {
         color: AppColors.containerBackgroundColor.withValues(
           alpha: .40,
         ),
-        borderRadius: BorderRadius.circular(5.0),
+        borderRadius: BorderRadius.circular(5.0.r),
       ),
       child: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -43,10 +44,10 @@ class InformationReportProblem extends StatelessWidget {
                 hours: AppStrings.appVersionVal,
                 daysStyle: Styles.styleRegular14(
                   context,
-                ).copyWith(color: AppColors.blackColor, fontSize: 12.0),
+                ).copyWith(color: AppColors.blackColor, fontSize: 12.0.sp),
                 hoursStyle: Styles.styleSemiBold20(
                   context,
-                ).copyWith(fontSize: 10.0, color: AppColors.blackColor),
+                ).copyWith(fontSize: 10.0.sp, color: AppColors.blackColor),
               ),
             ),
             Padding(
@@ -56,10 +57,10 @@ class InformationReportProblem extends StatelessWidget {
                 hours: AppStrings.mobileText,
                 daysStyle: Styles.styleRegular14(
                   context,
-                ).copyWith(color: AppColors.blackColor, fontSize: 12.0),
+                ).copyWith(color: AppColors.blackColor, fontSize: 12.0.sp),
                 hoursStyle: Styles.styleSemiBold20(
                   context,
-                ).copyWith(fontSize: 10.0, color: AppColors.blackColor),
+                ).copyWith(fontSize: 10.0.sp, color: AppColors.blackColor),
               ),
             ),
             RespondingTimes(
@@ -67,10 +68,10 @@ class InformationReportProblem extends StatelessWidget {
               hours: AppStrings.dateValue,
               daysStyle: Styles.styleRegular14(
                 context,
-              ).copyWith(color: AppColors.blackColor, fontSize: 12.0),
+              ).copyWith(color: AppColors.blackColor, fontSize: 12.0.sp),
               hoursStyle: Styles.styleSemiBold20(
                 context,
-              ).copyWith(fontSize: 10.0, color: AppColors.blackColor),
+              ).copyWith(fontSize: 10.0.sp, color: AppColors.blackColor),
             ),
           ],
         ),

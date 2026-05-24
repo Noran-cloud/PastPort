@@ -331,6 +331,9 @@ you have full range of motion.''';
   static const String dateValue = "December 22,2025";
   static const String describeProblem = "Describe the problem ";
   static const String minCharText = "minimum 20 characters";
+  static const String problemCategoryText = "Problem Category";
+  static const String selectCategoryText = "Select a category";
   static const String textFieldHint = "Please provide as much detail as possible about the problem you’re experiencing....";
   static const String footerText = "Our team will review your report and may contact you for additional information if needed.";
+  static const String reportSendSuccess = "Thank you for reporting a problem . Our team will investigate and get back to you within 24-48 hours";
 }

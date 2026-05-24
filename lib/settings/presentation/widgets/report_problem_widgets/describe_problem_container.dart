@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pastport/core/utils/app_colors.dart';
 import 'package:pastport/core/utils/app_strings.dart';
 import 'package:pastport/core/utils/app_styles.dart';
@@ -14,9 +15,8 @@ class DescribeProblemContainer extends StatelessWidget {
         color: AppColors.containerBackgroundColor.withValues(
           alpha: .40,
         ),
-        borderRadius: BorderRadius.circular(5.0),
+        borderRadius: BorderRadius.circular(5.0.r),
       ),
-
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -32,13 +32,13 @@ class DescribeProblemContainer extends StatelessWidget {
                   text: AppStrings.requiredText,
                   style: Styles.styleMedium10(context).copyWith(
                       color: Color(0xff3B5998),
-                      fontSize: 8
+                      fontSize: 8.sp
                   ),
                 ),
               ],
             ),
           ),
-          const SizedBox(height: 8),
+          SizedBox(height: 8.h),
           /// TEXT FIELD
           Container(
             padding: const EdgeInsets.all(12.0),
@@ -46,7 +46,7 @@ class DescribeProblemContainer extends StatelessWidget {
               color: AppColors.containerBackgroundColor.withValues(
                 alpha: .40,
               ),
-              borderRadius: BorderRadius.circular(5.0),
+              borderRadius: BorderRadius.circular(5.0.r),
             ),
             child: Column(
               children: [
@@ -59,7 +59,7 @@ class DescribeProblemContainer extends StatelessWidget {
                     hintText:
                     AppStrings.textFieldHint,
                     hintStyle: Styles.styleRegular10(context).copyWith(
-                      fontSize: 8.0,
+                      fontSize: 8.0.sp,
                       color: AppColors.blackColor,
                     ),
                   ),
@@ -68,7 +68,6 @@ class DescribeProblemContainer extends StatelessWidget {
                   alignment: Alignment.bottomRight,
                   child: Text(
                     AppStrings.minCharText,
-
                     style: Styles.styleRegular14(context),
                   ),
                 ),

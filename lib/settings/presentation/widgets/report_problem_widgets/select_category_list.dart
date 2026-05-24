@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pastport/core/utils/app_colors.dart';
+import 'package:pastport/core/utils/app_strings.dart';
 import 'package:pastport/core/utils/app_styles.dart';
 
 class SelectProblemCategoryList extends StatefulWidget {
@@ -28,7 +29,7 @@ class _SelectProblemCategoryListState extends State<SelectProblemCategoryList> {
     return Container(
       decoration: BoxDecoration(
         color: AppColors.containerBackgroundColor.withValues(alpha: .40),
-        borderRadius: BorderRadius.circular(5.0),
+        borderRadius: BorderRadius.circular(5.0.r),
       ),
       child: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -36,7 +37,7 @@ class _SelectProblemCategoryListState extends State<SelectProblemCategoryList> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Problem Category",
+              AppStrings.problemCategoryText,
               style: Styles.styleMedium10(context).copyWith(fontSize: 10.sp),
             ),
             Padding(
@@ -54,7 +55,7 @@ class _SelectProblemCategoryListState extends State<SelectProblemCategoryList> {
                 ),
                 width: double.infinity,
                 initialSelection: selectedCategory,
-                hintText: "Select a category",
+                hintText: AppStrings.selectCategoryText,
                 inputDecorationTheme: InputDecorationTheme(
                   filled: true,
                   fillColor: AppColors.containerBackgroundColor.withValues(
@@ -65,7 +66,7 @@ class _SelectProblemCategoryListState extends State<SelectProblemCategoryList> {
                     borderSide: BorderSide.none,
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(5),
+                    borderRadius: BorderRadius.circular(5.r),
                     borderSide: BorderSide.none,
                   ),
                 ),

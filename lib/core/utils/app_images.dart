@@ -238,4 +238,8 @@ class Assets
   /// assets/images/setting_background.png
   static const String settingBackground = "assets/images/setting_background.png";
 
+  /// Assets for communicationIcon
+  /// assets/images/communication_icon.png
+  static const String communicationIcon = "assets/images/communication_icon.png";
+
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pastport/core/extensions/helper_extension.dart';
 import 'package:pastport/core/utils/app_strings.dart';
 import 'package:pastport/settings/presentation/screens/help_and_support/help_support_screen.dart';
@@ -16,7 +17,7 @@ class SettingScreen extends StatelessWidget {
         child: Column(
           children: [
             SettingBackground(),
-            SizedBox(height: 10),
+            SizedBox(height: 10.h),
             /// ACCOUNT SECTION
             sectionTitle(AppStrings.accountText, context),
             customContainer(
@@ -28,7 +29,7 @@ class SettingScreen extends StatelessWidget {
                   onTap: () {},
                 ),
                 SizedBox(
-                  height: 22.0,
+                  height: 22.0.h,
                 ),
                 settingItem(
                   icon: Icons.lock_outline_rounded,
@@ -50,7 +51,7 @@ class SettingScreen extends StatelessWidget {
                   onTap: () {},
                 ),
                 SizedBox(
-                  height: 22.0,
+                  height: 22.0.h,
                 ),
                 settingItem(
                   icon: Icons.help_outline_rounded,
@@ -61,7 +62,7 @@ class SettingScreen extends StatelessWidget {
                   },
                 ),
                 SizedBox(
-                  height: 22.0,
+                  height: 22.0.h,
                 ),
                 settingItem(
                   icon: Icons.info_outline_rounded,

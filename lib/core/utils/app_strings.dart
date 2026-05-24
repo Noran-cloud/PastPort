@@ -312,4 +312,10 @@ you have full range of motion.''';
   static const String actionsText = "Actions";
   static const String logOutText = "Log out";
 
+  /// Log Out Screen
+
+  static const String logOutYourAccount = "Log out of your account?";
+  static const String needToSignInAgain = "You'll need to sign in again to access your account.";
+  static const String cancelText = "Cancel";
+
 }

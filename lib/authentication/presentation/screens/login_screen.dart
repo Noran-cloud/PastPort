@@ -4,14 +4,14 @@ import 'package:pastport/authentication/presentation/controllers/login_cubit/log
 import 'package:pastport/authentication/presentation/controllers/login_cubit/login_states.dart';
 import 'package:pastport/authentication/presentation/widgets/login_screen_widgets/bottom_part_login_screen.dart';
 import 'package:pastport/authentication/presentation/widgets/login_screen_widgets/top_part_login_screen.dart';
+import 'package:pastport/subscription/presentation/controllers/subscription_cubit/subscription_cubit.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (BuildContext context) => LoginCubit(),
+    return BlocProvider(create: (BuildContext context) => LoginCubit(),
       child: BlocBuilder<LoginCubit , LoginStates>(builder: (BuildContext context, state)
       {
         return Scaffold(
@@ -36,7 +36,6 @@ class LoginScreen extends StatelessWidget {
           ),
         );
       },
-
       ),
     );
   }

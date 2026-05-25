@@ -11,6 +11,7 @@ import 'package:pastport/core/extensions/helper_extension.dart';
 import 'package:pastport/core/utils/app_colors.dart';
 import 'package:pastport/core/utils/app_strings.dart';
 import 'package:pastport/core/utils/app_styles.dart';
+import 'package:pastport/subscription/presentation/controllers/subscription_cubit/subscription_cubit.dart';
 import 'package:pastport/subscription/presentation/screens/language_selection_screen.dart';
 
 class ContentOfSecondContainer extends StatelessWidget {

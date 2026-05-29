@@ -2,7 +2,7 @@ class SubscriptionPlanModel {
   final String id;
   final String name;
   final String description;
-  final num price;
+  final double price;
   final String currency;
   final int billingCycle;
   final int trialDays;

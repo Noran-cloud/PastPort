@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pastport/core/utils/app_colors.dart';
-import 'package:pastport/core/utils/app_strings.dart';
 import 'package:pastport/core/utils/app_styles.dart';
 
 class PlanCardWidget extends StatelessWidget {
@@ -11,10 +10,14 @@ class PlanCardWidget extends StatelessWidget {
     required this.planDescription,
     this.onTap,
     required this.color,
+    required this.price,
+    required this.currency,
   });
 
   final String planTitle;
   final String planDescription;
+  final double price;
+  final String currency;
   final Color color;
   final void Function()? onTap;
 
@@ -43,24 +46,36 @@ class PlanCardWidget extends StatelessWidget {
                         context,
                       ).copyWith(fontSize: 18, color: AppColors.secondaryColor),
                     ),
-                    planTitle == AppStrings.premiumPlanTitleText? Spacer() : SizedBox(),
-                    planTitle == AppStrings.premiumPlanTitleText? Container(
+                    Spacer(),
+                    Container(
                       padding: EdgeInsets.symmetric(horizontal: 12, vertical: 7.5),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: Color(0xff26CB63),
                       ),
-                      child: Text(
-                        AppStrings.bestValuePremiumPlanTitleText,
-                        style: Styles.styleMedium16(
-                          context,
-                        ).copyWith(fontSize: 10, color: AppColors.whiteColor),
+                      child: Row(
+                        children: [
+                          Text(
+                            "$price",
+                            style: Styles.styleMedium16(
+                              context,
+                            ).copyWith(fontSize: 10, color: AppColors.whiteColor),
+                          ),
+                          Text(
+                            currency,
+                            style: Styles.styleMedium16(
+                              context,
+                            ).copyWith(fontSize: 10, color: AppColors.whiteColor),
+                          ),
+                        ],
                       ),
-                    ) : SizedBox(),
+                    ),
                   ],
                 ),
                 SizedBox(height: 8),
                 Text(
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                   planDescription,
                   style: Styles.styleRegular14(
                     context,

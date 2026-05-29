@@ -1,44 +1,33 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pastport/core/utils/app_colors.dart';
-import 'package:pastport/core/utils/app_strings.dart';
-import 'package:pastport/core/utils/constants.dart';
+import 'package:pastport/subscription/data/models/subscription_plan_model.dart';
+import 'package:pastport/subscription/presentation/controllers/subscription_cubit/subscription_cubit.dart';
+import 'package:pastport/subscription/presentation/controllers/subscription_cubit/subscription_states.dart';
 import 'package:pastport/subscription/presentation/widgets/subscription_plans_screen_widgets/plan_card_widget.dart';
 
-class GroupOfPlans extends StatefulWidget {
-  const GroupOfPlans({super.key});
+class GroupOfPlans extends StatelessWidget {
+  const GroupOfPlans({super.key, required this.subscriptionPlans});
 
-  @override
-  State<GroupOfPlans> createState() => _GroupOfPlansState();
-}
-
-class _GroupOfPlansState extends State<GroupOfPlans> {
+  final List<SubscriptionPlanModel> subscriptionPlans;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        PlanCardWidget(
-          onTap: (){
-            setState(() {
-              Constants.isSelectedPlan = true;
-            });
-          },
-          color: Constants.isSelectedPlan? AppColors.lightRegularTextColor : AppColors.lightRegularTextColor.withValues(alpha: .6),
-          planTitle: AppStrings.freePlanTitleText,
-          planDescription: AppStrings.freePlanDescriptionText,
-        ),
-        SizedBox(height: 16),
-        PlanCardWidget(
-          color: AppColors.lightRegularTextColor.withValues(alpha: .6),
-          planTitle: AppStrings.premiumPlanTitleText,
-          planDescription: AppStrings.premiumPlanDescriptionText,
-        ),
-        SizedBox(height: 16),
-        PlanCardWidget(
-          color: AppColors.lightRegularTextColor.withValues(alpha: .6),
-          planTitle: AppStrings.institutionalPlanTitleText,
-          planDescription: AppStrings.institutionalPlanDescriptionText,
-        ),
-      ],
+    return ListView.separated(
+      shrinkWrap: true,
+      itemCount: subscriptionPlans.length,
+      itemBuilder: (context, index) => listItem(subscriptionPlans[index]),
+      separatorBuilder: (BuildContext context, int index) => SizedBox(height: 16.0,),);
+  }
+
+  Widget listItem(SubscriptionPlanModel model)
+  {
+    return PlanCardWidget(
+      color: AppColors.lightRegularTextColor.withValues(alpha: .6),
+      planTitle: model.name,
+      planDescription: model.description,
+      price: model.price,
+      currency: model.currency,
     );
   }
 }
+

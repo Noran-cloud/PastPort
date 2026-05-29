@@ -48,7 +48,6 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
                                 height: 55.0,
                                 onPressed: () {
                                   SubscriptionCubit.get(context).getAllPlans();
-                                  context.navigate(SubscriptionPlansScreen());
                                 },
                                 buttonText: state is GetAllPlansLoadingState? "Loading.." : AppStrings.continueButtonText,
                                 textStyle: Styles.styleMedium16(
@@ -59,10 +58,9 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
                           listener: (BuildContext context, SubscriptionStates state) {
                             if(state is GetAllPlansSuccessState)
                             {
-                              context.navigate(SubscriptionPlansScreen());
+                              context.navigate(SubscriptionPlansScreen(subscriptionPlanModel: SubscriptionCubit.get(context).subscriptionPlans,));
                             }
                           },
-
                         ),
                       ),
                     ],

@@ -49,11 +49,15 @@ class ContentOfSecondContainer extends StatelessWidget {
                     radius: 27,
                     height: 41,
                     onPressed: () {
-                      LoginCubit.get(context).loginUserWithEmailAndPassword(
-                        mail: LoginCubit.get(context).mailController.text,
-                        pass: LoginCubit.get(context).passController.text,
-                      );
-                      print(state);
+
+                      if(LoginCubit.get(context).loginFormKey.currentState!.validate())
+                      {
+                        LoginCubit.get(context).loginUserWithEmailAndPassword(
+                          mail: LoginCubit.get(context).mailController.text,
+                          pass: LoginCubit.get(context).passController.text,
+                        );
+                        print(state);
+                      }
                     },
                     buttonText: state is LoginLoadingState ? "Loading.." : AppStrings.loginText,
                     textStyle: Styles.styleRegular14(context)

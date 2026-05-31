@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pastport/authentication/data/models/register_model.dart';
+import 'package:pastport/authentication/presentation/controllers/login_cubit/login_cubit.dart';
 import 'package:pastport/core/extensions/helper_extension.dart';
 import 'package:pastport/core/utils/app_colors.dart';
 import 'package:pastport/core/utils/app_strings.dart';

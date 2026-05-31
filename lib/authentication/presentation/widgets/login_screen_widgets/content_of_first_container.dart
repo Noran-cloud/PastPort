@@ -17,51 +17,70 @@ class ContentOfFirstContainer extends StatelessWidget {
     return BlocBuilder<LoginCubit, LoginStates>(
       builder: (BuildContext context, LoginStates state)
       {
-        return Column(
-          children: [
-            Image.asset(Assets.loginImage, height: 133),
-            SizedBox(height: 5),
-            Text(
-              AppStrings.welcomeText,
-              style: Styles.styleRegular21(
-                context,
-              ).copyWith(fontSize: 21),
-            ),
-            Text(
-              AppStrings.welcomeDescriptionText,
-              style: Styles.styleRegular16(
-                context,
-              ).copyWith(fontSize: 16),
-            ),
-            CustomTextButton(
-              onPressed: () {},
-              text: AppStrings.termsConditionText,
-              style: Styles.styleDarkRegular16(
-                context,
-              ).copyWith(fontSize: 16),
-            ),
-            CustomTextField(
-              controller: LoginCubit.get(context).mailController,
-              keyboardType: TextInputType.emailAddress,
-              height: 43,
-              radius: 9,
-              labelText: "Email Address",
-              isFilled: true,
-              suffixIcon: Icons.email_outlined,
-            ),
-            SizedBox(height: 15),
-            CustomTextField(
-              controller: LoginCubit.get(context).passController,
-              keyboardType: TextInputType.text,
-              height: 43,
-              radius: 9,
-              labelText: "Password",
-              isFilled: true,
-              suffixIcon: Icons.lock_outline,
-            ),
-            SizedBox(height: 10),
-            RememberPasswordCheckButton(),
-          ],
+        return Form(
+          key: LoginCubit.get(context).loginFormKey,
+          child: Column(
+            children: [
+              Image.asset(Assets.loginImage, height: 133),
+              SizedBox(height: 5),
+              Text(
+                AppStrings.welcomeText,
+                style: Styles.styleRegular21(
+                  context,
+                ).copyWith(fontSize: 21),
+              ),
+              Text(
+                AppStrings.welcomeDescriptionText,
+                style: Styles.styleRegular16(
+                  context,
+                ).copyWith(fontSize: 16),
+              ),
+              CustomTextButton(
+                onPressed: () {},
+                text: AppStrings.termsConditionText,
+                style: Styles.styleDarkRegular16(
+                  context,
+                ).copyWith(fontSize: 16),
+              ),
+              CustomTextField(
+                validator: (value)
+                {
+                  if(value!.isEmpty)
+                  {
+                    return "Please enter your email";
+                  }
+                  return null;
+                },
+                controller: LoginCubit.get(context).mailController,
+                keyboardType: TextInputType.emailAddress,
+                height: 43,
+                radius: 9,
+                labelText: "Email Address",
+                isFilled: true,
+                suffixIcon: Icons.email_outlined,
+              ),
+              SizedBox(height: 15),
+              CustomTextField(
+                validator: (value)
+                {
+                  if(value!.isEmpty)
+                  {
+                    return "Please enter your password";
+                  }
+                  return null;
+                },
+                controller: LoginCubit.get(context).passController,
+                keyboardType: TextInputType.text,
+                height: 43,
+                radius: 9,
+                labelText: "Password",
+                isFilled: true,
+                suffixIcon: Icons.lock_outline,
+              ),
+              SizedBox(height: 10),
+              RememberPasswordCheckButton(),
+            ],
+          ),
         );
       },
 

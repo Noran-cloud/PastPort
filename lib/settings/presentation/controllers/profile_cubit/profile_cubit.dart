@@ -1,0 +1,40 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pastport/core/network/local/shared_preferences.dart';
+import 'package:pastport/core/network/remote/dio_helper.dart';
+import 'package:pastport/core/network/remote/end_points.dart';
+import 'package:pastport/settings/models/profile_model.dart';
+import 'package:pastport/settings/presentation/controllers/profile_cubit/profile_states.dart';
+
+class ProfileCubit extends Cubit<ProfileStates> {
+  ProfileCubit() : super(ProfileInitialState());
+
+  static ProfileCubit get(context) => BlocProvider.of(context);
+
+  var fNameController = TextEditingController();
+  var lNameController = TextEditingController();
+
+  UserModel? userModel;
+
+  void getUserData()
+  {
+    emit(GetProfileLoadingState());
+    final token = LocalStorage.token;
+    DioHelper.getData(
+      token: token,
+      url: GETPROFILE,
+    ).then((value)
+    {
+      userModel = UserModel.fromJson(value.data);
+      print(value.data);
+      emit(GetProfileSuccessState());
+    }).catchError((error)
+    {
+      print(
+        "Error happens while get user profile, "
+            "error is : ${error.toString()}",
+      );
+      emit(GetProfileFailureState());
+    });
+  }
+}

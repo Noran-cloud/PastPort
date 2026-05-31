@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pastport/authentication/presentation/widgets/arrow_back_head_of_screens.dart';
-import 'package:pastport/core/utils/app_colors.dart';
 import 'package:pastport/core/utils/app_styles.dart';
 
 class HeadSettings extends StatelessWidget {

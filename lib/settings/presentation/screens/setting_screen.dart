@@ -20,7 +20,8 @@ class SettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context) => ProfileCubit()..getUserData(),
+      create: (BuildContext context) => ProfileCubit()..checkUserExist(context)..getUserData(),
+
       child: BlocConsumer<ProfileCubit, ProfileStates>(
         listener: (context, state) {},
         builder: (context, state) {

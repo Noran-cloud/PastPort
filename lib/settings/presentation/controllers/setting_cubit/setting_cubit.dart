@@ -15,4 +15,6 @@ class SettingCubit extends Cubit<SettingStates>
     print("Send report is $notSend");
     emit(SendReportState());
   }
+
+
 }

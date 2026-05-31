@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:pastport/core/network/local/shared_preferences.dart';
 
 class DioHelper {
   static Dio? dio;
@@ -16,9 +17,24 @@ class DioHelper {
       ),
     );
 
+    dio!.interceptors.add(
+      InterceptorsWrapper(
+        onError: (error, handler) async {
+
+          if (error.response?.statusCode == 401) {
+            await LocalStorage.sharedPreferences.remove('token');
+            print("Token expired -> User logged out");
+          }
+
+          handler.next(error);
+        },
+      ),
+    );
+
   }
 
   // Extract Method refactoring
+
 
   static void headersOfAPI()
   {

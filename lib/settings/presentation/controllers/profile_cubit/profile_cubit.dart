@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pastport/core/network/local/shared_preferences.dart';
 import 'package:pastport/core/network/remote/dio_helper.dart';
 import 'package:pastport/core/network/remote/end_points.dart';
+import 'package:pastport/core/utils/app_router.dart';
 import 'package:pastport/settings/models/profile_model.dart';
 import 'package:pastport/settings/presentation/controllers/profile_cubit/profile_states.dart';
 
@@ -20,6 +21,7 @@ class ProfileCubit extends Cubit<ProfileStates> {
   {
     emit(GetProfileLoadingState());
     final token = LocalStorage.token;
+    print(token);
     DioHelper.getData(
       token: token,
       url: GETPROFILE,
@@ -36,5 +38,13 @@ class ProfileCubit extends Cubit<ProfileStates> {
       );
       emit(GetProfileFailureState());
     });
+  }
+
+  void checkUserExist(context)
+  {
+    if(LocalStorage.token == null)
+    {
+      context.go(AppRouter.kAuthView);
+    }
   }
 }

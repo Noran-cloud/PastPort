@@ -20,8 +20,7 @@ class SettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context) => ProfileCubit()..checkUserExist(context)..getUserData(),
-
+      create: (BuildContext context) => ProfileCubit()..getUserData(context),
       child: BlocConsumer<ProfileCubit, ProfileStates>(
         listener: (context, state) {},
         builder: (context, state) {
@@ -38,7 +37,12 @@ class SettingScreen extends StatelessWidget {
                     SizedBox(height: 20.h),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 20.0),
-                      child: Text("Fatma Mamdouh", style: Styles.styleBold24(context).copyWith(fontSize: 20.sp),),
+                      child: Text(
+                          state is GetProfileSuccessState
+                              ? "${ProfileCubit.get(context).userModel?.data.firstName ?? ""} "
+                              "${ProfileCubit.get(context).userModel?.data.lastName ?? ""}"
+                              : "",
+                        style: Styles.styleBold24(context).copyWith(fontSize: 20.sp),),
                     ),
                     /// ACCOUNT SECTION
                     sectionTitle(AppStrings.accountText, context),

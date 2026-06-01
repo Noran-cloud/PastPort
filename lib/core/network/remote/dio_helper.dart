@@ -20,7 +20,6 @@ class DioHelper {
     dio!.interceptors.add(
       InterceptorsWrapper(
         onError: (error, handler) async {
-
           if (error.response?.statusCode == 401) {
             await LocalStorage.sharedPreferences.remove('token');
             print("Token expired -> User logged out");

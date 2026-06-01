@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pastport/core/extensions/helper_extension.dart';
 import 'package:pastport/core/utils/app_colors.dart';
 import 'package:pastport/core/utils/app_images.dart';
 import 'package:pastport/core/utils/app_strings.dart';
@@ -6,6 +8,9 @@ import 'package:pastport/scenario_builder/presentation/widgets/eras_screen_widge
 import 'package:pastport/scenario_builder/presentation/widgets/eras_screen_widgets/appbar_shadow_era_screen.dart';
 import 'package:pastport/scenario_builder/presentation/widgets/eras_screen_widgets/era_card_widget.dart';
 import 'package:pastport/scenario_builder/presentation/widgets/header_text_of_screens.dart';
+import 'package:pastport/settings/presentation/controllers/profile_cubit/profile_cubit.dart';
+import 'package:pastport/settings/presentation/controllers/profile_cubit/profile_states.dart';
+import 'package:pastport/settings/presentation/screens/setting_screen.dart';
 
 class ErasScreen extends StatelessWidget {
   const ErasScreen({super.key});

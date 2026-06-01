@@ -83,7 +83,6 @@ class ContentOfFirstContainer extends StatelessWidget {
           ),
         );
       },
-
     );
   }
 }

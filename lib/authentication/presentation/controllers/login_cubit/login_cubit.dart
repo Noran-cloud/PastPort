@@ -12,10 +12,7 @@ class LoginCubit extends Cubit<LoginStates>
 
   static LoginCubit get(context) => BlocProvider.of(context);
 
-
   var loginFormKey = GlobalKey<FormState>();
-
-
   var mailController = TextEditingController();
   var passController = TextEditingController();
 

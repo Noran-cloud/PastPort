@@ -3,10 +3,8 @@ import 'package:pastport/app_states.dart';
 import 'package:pastport/core/network/local/shared_preferences.dart';
 
 class AppCubit extends Cubit<AppStates> {
-
   AppCubit() : super(AppInitialState());
   static AppCubit get(context) => BlocProvider.of(context);
-
 
   void checkUserLogin()
   {
@@ -22,7 +20,6 @@ class AppCubit extends Cubit<AppStates> {
 
   Future<void> logout() async {
     await LocalStorage.sharedPreferences.remove('token');
-
     emit(UserLoggedOutState());
   }
 }

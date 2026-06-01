@@ -17,7 +17,7 @@ class ProfileCubit extends Cubit<ProfileStates> {
 
   UserModel? userModel;
 
-  void getUserData()
+  void getUserData(context)
   {
     emit(GetProfileLoadingState());
     final token = LocalStorage.token;
@@ -36,6 +36,7 @@ class ProfileCubit extends Cubit<ProfileStates> {
         "Error happens while get user profile, "
             "error is : ${error.toString()}",
       );
+      checkUserExist(context);
       emit(GetProfileFailureState());
     });
   }
@@ -44,6 +45,7 @@ class ProfileCubit extends Cubit<ProfileStates> {
   {
     if(LocalStorage.token == null)
     {
+      print("token is empty");
       context.go(AppRouter.kAuthView);
     }
   }

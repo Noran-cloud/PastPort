@@ -5,3 +5,4 @@ const String FORGETPASS = "/Auth/forgot-password";
 const String RESETPASS = "/Auth/reset-password";
 const String GETSUBPLANS = "/subscriptions/plans";
 const String GETPROFILE = "/Users/profile";
+const String LOGOUT = "/Auth/logout";

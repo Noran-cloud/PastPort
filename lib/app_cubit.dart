@@ -17,9 +17,4 @@ class AppCubit extends Cubit<AppStates> {
       emit(UserLoggedOutState());
     }
   }
-
-  Future<void> logout() async {
-    await LocalStorage.sharedPreferences.remove('token');
-    emit(UserLoggedOutState());
-  }
 }

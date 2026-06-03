@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pastport/authentication/presentation/screens/auth_selection_screen.dart';
 import 'package:pastport/authentication/presentation/widgets/custom_button.dart';
 import 'package:pastport/core/extensions/helper_extension.dart';
 import 'package:pastport/core/utils/app_colors.dart';
 import 'package:pastport/core/utils/app_strings.dart';
 import 'package:pastport/core/utils/app_styles.dart';
+import 'package:pastport/settings/presentation/controllers/log_out_cubit/log_out_cubit.dart';
+import 'package:pastport/settings/presentation/controllers/log_out_cubit/log_out_states.dart';
 
 class LogOutContent extends StatelessWidget {
   const LogOutContent({super.key});
@@ -39,22 +42,32 @@ class LogOutContent extends StatelessWidget {
                   color: AppColors.faqQuestionColor,
                 ),),
               SizedBox(height: 12,),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 52.0),
-                child: CustomButton(
-                  borderColor: Color(0xffFF0000).withValues(alpha: .6),
-                  buttonColor: Color(0xffFF0000).withValues(alpha: .6),
-                  radius: 4,
-                  height: 40,
-                  onPressed: ()
+              BlocConsumer<LogOutCubit, LogOutStates>(
+                builder: (BuildContext context, Object? state) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 52.0),
+                    child: CustomButton(
+                      borderColor: Color(0xffFF0000).withValues(alpha: .6),
+                      buttonColor: Color(0xffFF0000).withValues(alpha: .6),
+                      radius: 4,
+                      height: 40,
+                      onPressed: ()
+                      {
+                        LogOutCubit.get(context).logout();
+                      },
+                      buttonText: state is LoggedOutLoadingState ? "Logging out.." : AppStrings.logOutText,
+                      textStyle: Styles.styleSemiBold20(context).copyWith(
+                        fontSize: 10.0,
+                      ),
+                    ),
+                  );
+                },
+                listener: (BuildContext context, state) {
+                  if(state is LoggedOutSuccessState)
                   {
                     context.navigate(AuthSelectionScreen());
-                  },
-                  buttonText: AppStrings.logOutText,
-                  textStyle: Styles.styleSemiBold20(context).copyWith(
-                    fontSize: 10.0,
-                  ),
-                ),
+                  }
+                },
               ),
               SizedBox(height: 12,),
               Padding(

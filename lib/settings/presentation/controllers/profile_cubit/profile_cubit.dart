@@ -49,4 +49,6 @@ class ProfileCubit extends Cubit<ProfileStates> {
       context.go(AppRouter.kAuthView);
     }
   }
+
+
 }

@@ -1,18 +1,19 @@
 import 'package:flutter/cupertino.dart';
+import 'package:pastport/core/utils/app_strings.dart';
 import 'package:pastport/core/utils/app_styles.dart';
 import 'package:pastport/scenario_builder/models/era_model.dart';
 import 'package:pastport/scenario_builder/presentation/widgets/custom_scenario_widgets/head_of_scenario_screens.dart';
 import 'package:pastport/scenario_builder/presentation/widgets/custom_scenario_widgets/scenario_selection_item.dart';
 
-class CustomizationBodyScreens extends StatelessWidget {
-  const CustomizationBodyScreens({
+class CustomizationBodyRoleScreen extends StatelessWidget {
+  const CustomizationBodyRoleScreen({
     super.key,
     required this.isLocationSelected,
     required this.isGoalSelected,
     required this.isRoleSelected,
     required this.selectionText,
-    required this.onTap,
     required this.eraModel,
+    required this.onTap,
   });
 
   final bool isLocationSelected;
@@ -23,7 +24,6 @@ class CustomizationBodyScreens extends StatelessWidget {
   final EraModel eraModel;
 
   final void Function() onTap;
-
 
   @override
   Widget build(BuildContext context) {
@@ -53,14 +53,14 @@ class CustomizationBodyScreens extends StatelessWidget {
           Row(
             children: [
               ScenarioSelectionItem(
-                image: eraModel.placesImages[0],
-                title: eraModel.placesNames[0],
+                image: eraModel.roleImages[0],
+                title: AppStrings.historicalRoleText,
                 onTap: onTap,
               ),
               SizedBox(width: 15.0),
               ScenarioSelectionItem(
-                image: eraModel.placesImages[1],
-                title: eraModel.placesNames[1],
+                image: eraModel.roleImages[1],
+                title: AppStrings.citizenRoleText,
                 onTap: onTap,
               ),
             ],
@@ -69,14 +69,14 @@ class CustomizationBodyScreens extends StatelessWidget {
           Row(
             children: [
               ScenarioSelectionItem(
-                image: eraModel.placesImages[2],
-                title: eraModel.placesNames[2],
+                image: eraModel.roleImages[2],
+                title: AppStrings.characterRoleText,
                 onTap: onTap,
               ),
               SizedBox(width: 15.0),
               ScenarioSelectionItem(
-                image: eraModel.placesImages[3],
-                title: eraModel.placesNames[3],
+                image: eraModel.roleImages[3],
+                title: AppStrings.visitorRoleText,
                 onTap: onTap,
               ),
             ],

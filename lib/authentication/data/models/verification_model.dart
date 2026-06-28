@@ -1,20 +1,19 @@
-import 'package:pastport/authentication/domain/entities/verification.dart';
+class VerificationModel {
+  bool? success;
+  String? message;
+  Data? data;
 
-class VerificationModel extends Verification
-{
-  VerificationModel(
-      super.success,
-      super.message,
-      super.data,
-      );
+  VerificationModel.fromJson(Map<String, dynamic> json) {
+    success = json['success'];
+    message = json['message'];
+    data = json['data'] != null ? Data.fromJson(json['data']) : null;
+  }
+}
 
-  factory VerificationModel.fromJson(Map<String, dynamic> json)
-  {
-    return VerificationModel(
-      json['success'],
-      json['message'],
-      json['data'],
-    );
+class Data {
+  String? code;
 
+  Data.fromJson(Map<String, dynamic> json) {
+    code = json['code'];
   }
 }

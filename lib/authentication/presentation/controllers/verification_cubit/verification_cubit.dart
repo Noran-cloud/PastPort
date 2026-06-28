@@ -26,14 +26,16 @@ class VerificationCubit extends Cubit<VerificationStates>
       },
     ).then((value)
     {
-      emit(SendCodeSuccessState());
       verificationModel = VerificationModel.fromJson(value.data);
-      print("data from send code request is ${value.data}");
+      if(verificationModel!.success == true)
+      {
+        emit(SendCodeSuccessState());
+        print("data from send code request is ${value.data}");
+      } else
+      {
+        emit(SendCodeFailureState());
+      }
 
-    }).catchError((error)
-    {
-      print("Error happens while sending code, error is : ${error.toString()}");
-      emit(SendCodeFailureState());
     });
   }
 }

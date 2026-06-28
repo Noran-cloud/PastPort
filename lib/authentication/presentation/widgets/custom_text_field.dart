@@ -3,7 +3,7 @@ import 'package:pastport/core/utils/app_colors.dart';
 import 'package:pastport/core/utils/app_styles.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({this.hint, super.key, required this.height, required this.radius, this.labelText, required this.isFilled, this.suffixIcon, required this.keyboardType, required this.controller, this.validator});
+  const CustomTextField({this.hint, super.key, required this.height, required this.radius, this.labelText, required this.isFilled, this.suffixIcon, required this.keyboardType, required this.controller, this.validator, this.onPressedSuffixIcon});
 
   final double height;
   final double radius;
@@ -14,6 +14,7 @@ class CustomTextField extends StatelessWidget {
   final IconData? suffixIcon;
   final TextInputType keyboardType;
   final TextEditingController controller;
+  final void Function()? onPressedSuffixIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,7 @@ class CustomTextField extends StatelessWidget {
           fillColor: AppColors.whiteColor,
           filled: isFilled,
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(radius)),
-          suffixIcon: suffixIcon != null? Icon(suffixIcon, color: AppColors.greyIconColor) : null,
+          suffixIcon: suffixIcon != null? IconButton(icon: Icon(suffixIcon), color: AppColors.greyIconColor, onPressed: onPressedSuffixIcon,) : null,
         ),
       ),
     );

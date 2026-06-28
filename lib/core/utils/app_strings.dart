@@ -133,12 +133,20 @@ you have full range of motion.''';
   static const String headOfHomeScreenText = "Every image is a portal, select your gateway and\n experience the heart of civilization.";
   static const String ancientEgyptTitleText = "Ancient Egypt";
   static const String romanEmpireTitleText = "Roman Empire";
+  static const String ancientChinaTitleText = "Ancient China";
+  static const String ancientGreeceTitleText = "Ancient Greece";
   static const String ancientEgyptDescText = "Uncover the pharoh’s secret";
   static const String romanEmpireDescText = "Forge an Empire of Stone & Power";
+  static const String ancientChinaDescText = "Discover dynasties & Ancient Wisdom";
+  static const String ancientGreeceDescText = "Philosophers, Gods, The Birth Of Democracy ";
   static const String ancientEgyptHeaderScreenText = "Ancient Egypt:Land of pharaohs &\n Eternal Mysteries";
   static const String romanEmpireHeaderScreenText = "Roman Empire:Power,Innovation &\n Enduring Legacy";
+  static const String ancientChinaHeaderScreenText = "Ancient China:Land of\n Dragons,Wisdom & Skill Road Secrets";
+  static const String ancientGreeceHeaderScreenText = "Ancient Greece:Cradle of\n philosophy,Democracy & Immortal Myths";
   static const String romanEmpireDescriptionScreenText = "Explore the grandeur of the Roman Empire, which governed a vast portion of the known world. Witness the flourishing of its great cities, learn the tales of mighty emperors, and the courage of legions that built a legacy of power and innovation. From architecture to philosophy, how will the world change through your perspective of this era?";
   static const String ancientEgyptDescriptionScreenText = "Dive into the world of Ancient Egyptian civilization, where towering pyramids tell tales of mighty kings and pharaohs, and the Nile River recounts millennia of history. Discover their enigmatic arts, majestic temples, and beliefs that transcended time. Are you ready to unravel the mysteries of a civilization that captivated the entire world?";
+  static const String ancientChinaDescriptionScreenText = "Embark on a journey through millennia of great Chinese history, where tales of powerful dynasties, profound philosophical wisdom, and world-shaping innovations unfold. Explore the wonders of the Great Wall, witness the beauty of traditional arts, and discover a civilization that gifted the world inventions still impacting us today. What secrets will you uncover in the heart of the East?";
+  static const String ancientGreeceDescriptionScreenText = "Step into the world of Ancient Greece, where philosophy was born, democracy thrived, and heroes and gods vied in epic tales. Explore ancient cities like Athens and Sparta, learn from the wisdom of great philosophers, and witness how this civilization laid the foundations for Western culture in art, science, and politics. What truths will you uncover in the heart of this golden age?";
   static const String selectEraHeaderScreen = "Select Era";
   static const String exploreEraButton = "Explore this Era";
 
@@ -167,6 +175,24 @@ you have full range of motion.''';
   static const String pantheonRomanText = "Pantheon";
   static const String romanForumRomanText = "Roman Forum";
   static const String pompeiiRomanText = "Pompeii";
+
+  /// Egypt Places Screen
+  static const String gizaPyramidsText = "Giza Pyramids";
+  static const String karnakTemplateText = "Karnak Temple";
+  static const String vallyKingsText = "Valley of the Kings";
+  static const String hatshepsutTemplateText = "Temple of Hatshepsut";
+
+  /// China Places Screen
+  static const String greatWallText = "Great Wall of China";
+  static const String forbiddenCityText = "Forbidden City";
+  static const String terracottaText = "Terracotta Army";
+  static const String heavenTemplateText = "Temple of Heaven";
+
+  /// Greece Places Screen
+  static const String acropolisAthensText = "Acropolis of Athens";
+  static const String forbiddenCityGreeceText = "Forbidden City";
+  static const String olympiaText = "Olympia";
+  static const String epidaurusTheatreText = "Theatre of Epidaurus";
 
   /// faq screen
   static const String faqTitleScreen = "FAQ";

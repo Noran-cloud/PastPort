@@ -56,19 +56,19 @@ class Assets
 
   /// Assets for characterRoleImage
   /// assets/images/character_role_image.png
-  static const String characterRoleImage = "assets/images/character_role_image.png";
+  static const String characterRoleImageRoman = "assets/images/character_role_image.png";
 
   /// Assets for citizenRoleImage
   /// assets/images/citizen_role_image.png
-  static const String citizenRoleImage = "assets/images/citizen_role_image.png";
+  static const String citizenRoleImageRoman = "assets/images/citizen_role_image.png";
 
   /// Assets for historicalRoleImage
   /// assets/images/historical_role_image.png
-  static const String historicalRoleImage = "assets/images/historical_role_image.png";
+  static const String historicalRoleImageRoman = "assets/images/historical_role_image.png";
 
   /// Assets for visitorRoleImage
   /// assets/images/visitor_role_image.png
-  static const String visitorRoleImage = "assets/images/visitor_role_image.png";
+  static const String visitorRoleImageRoman = "assets/images/visitor_role_image.png";
 
   /// Assets for colosseumLocationImage
   /// assets/images/colosseum_location_image.png
@@ -86,17 +86,17 @@ class Assets
   /// assets/images/roman_forum_location_image.png
   static const String romanForumLocationImage = "assets/images/roman_forum_location_image.png";
 
-  /// Assets for culturalGoalImage
+  /// Assets for culturalGoalImageRoman
   /// assets/images/cultural_goal_image.png
-  static const String culturalGoalImage = "assets/images/cultural_goal_image.png";
+  static const String culturalGoalImageRoman = "assets/images/cultural_goal_image.png";
 
-  /// Assets for educationalGoalImage
+  /// Assets for educationalGoalImageRoman
   /// assets/images/education_goal_image.png
-  static const String educationalGoalImage = "assets/images/education_goal_image.png";
+  static const String educationalGoalImageRoman = "assets/images/education_goal_image.png";
 
-  /// Assets for explorationGoalImage
+  /// Assets for explorationGoalImageRoman
   /// assets/images/exploration_goal_image.png
-  static const String explorationGoalImage = "assets/images/exploration_goal_image.png";
+  static const String explorationGoalImageRoman = "assets/images/exploration_goal_image.png";
 
   /// Assets for romanEmpireCover
   /// assets/images/roman_empire_era_cover.png
@@ -114,9 +114,110 @@ class Assets
   /// assets/images/roman_empire_details_3.jpg
   static const String romanEmpireDetails_3 = "assets/images/roman_empire_details_3.jpg";
 
+  /// Assets for romanEmpireDetails_4
+  /// assets/images/roman_empire_details_4.jpg
+  static const String romanEmpireDetails_4 = "assets/images/roman_empire_details_4.jpg";
+
+  /// Assets for ancientGreeceEraCover
+  /// assets/images/ancient_greece_cover.jpg
+  static const String ancientGreeceEraCover = "assets/images/ancient_greece_cover.jpg";
+
+  /// Assets for ancientGreeceDetails_1
+  /// assets/images/ancient_greece_details_1.png
+  static const String ancientGreeceDetails_1 = "assets/images/ancient_greece_details_1.png";
+
+  /// Assets for ancientGreeceDetails_2
+  /// assets/images/ancient_greece_details_2.png
+  static const String ancientGreeceDetails_2 = "assets/images/ancient_greece_details_2.png";
+
+  /// Assets for ancientGreeceDetails_3
+  /// assets/images/ancient_greece_details_3.jpg
+  static const String ancientGreeceDetails_3 = "assets/images/ancient_greece_details_3.jpg";
+
+  /// Assets for ancientGreeceDetails_4
+  /// assets/images/ancient_greece_details_4.jpg
+  static const String ancientGreeceDetails_4 = "assets/images/ancient_greece_details_4.jpg";
+
+
+  /// Assets for citizenRoleGreece
+  /// assets/images/citizen_role_image_greece.png
+  static const String citizenRoleGreece = "assets/images/citizen_role_image_greece.png";
+
+  /// Assets for characterRoleGreece
+  /// assets/images/character_role_image_greece.png
+  static const String characterRoleGreece = "assets/images/character_role_image_greece.png";
+
+  /// Assets for historicalRoleChina
+  /// assets/images/historical_role_image_greece.png
+  static const String historicalRoleGreece = "assets/images/historical_role_image_greece.png";
+
+  /// Assets for visitorRoleGreece
+  /// assets/images/visitor_role_image_greece.png
+  static const String visitorRoleGreece = "assets/images/visitor_role_image_greece.png";
+
+  /// Assets for culturalGoalImageGreece
+  /// assets/images/cultural_goal_image_greece.png
+  static const String culturalGoalImageGreece = "assets/images/cultural_goal_image_greece.png";
+
+  /// Assets for educationalGoalImageGreece
+  /// assets/images/educational_goal_image_greece.png
+  static const String educationalGoalImageGreece = "assets/images/educational_goal_image_greece.png";
+
+  /// Assets for explorationGoalImageGreece
+  /// assets/images/explore_goal_image_greece.png
+  static const String explorationGoalImageGreece = "assets/images/explore_goal_image_greece.png";
+
   /// Assets for iconNameImage
   /// assets/images/icon_name_image.png
   static const String iconNameImage = "assets/images/icon_name_image.png";
+
+  /// Assets for ancientChinaEraCover
+  /// assets/images/chineese_culture.png
+  static const String ancientChinaEraCover = "assets/images/chineese_culture.png";
+
+  /// Assets for ancientChinaDetails_1
+  /// assets/images/chine_era_details_1.png
+  static const String ancientChinaDetails_1 = "assets/images/chine_era_details_1.png";
+
+  /// Assets for ancientChinaDetails_2
+  /// assets/images/chine_era_details_2.png
+  static const String ancientChinaDetails_2 = "assets/images/chine_era_details_2.png";
+
+  /// Assets for ancientChinaDetails_3
+  /// assets/images/china_era_details_3.jpg
+  static const String ancientChinaDetails_3 = "assets/images/china_era_details_3.jpg";
+
+  /// Assets for ancientChinaDetails_4
+  /// assets/images/china_era_details_4.jpg
+  static const String ancientChinaDetails_4 = "assets/images/china_era_details_4.jpg";
+
+  /// Assets for citizenRoleChina
+  /// assets/images/citizen_role_image_china.png
+  static const String citizenRoleChina = "assets/images/citizen_role_image_china.png";
+
+  /// Assets for characterRoleChina
+  /// assets/images/character_role_image_china.png
+  static const String characterRoleChina = "assets/images/character_role_image_china.png";
+
+  /// Assets for historicalRoleChina
+  /// assets/images/historical_role_image_china.png
+  static const String historicalRoleChina = "assets/images/historical_role_image_china.png";
+
+  /// Assets for visitorRoleChina
+  /// assets/images/visitor_role_image_china.png
+  static const String visitorRoleChina = "assets/images/visitor_role_image_china.png";
+
+  /// Assets for culturalGoalImageChina
+  /// assets/images/cultural_goal_image_china.png
+  static const String culturalGoalImageChina = "assets/images/cultural_goal_image_china.png";
+
+  /// Assets for educationalGoalImageChina
+  /// assets/images/historical_role_image_china.png
+  static const String educationalGoalImageChina = "assets/images/educational_goal_image_china.png";
+
+  /// Assets for explorationGoalImageChina
+  /// assets/images/exploration_goal_image_china.png
+  static const String explorationGoalImageChina = "assets/images/exploration_goal_image_china.png";
 
   /// Assets for ancientEgyptEraCover
   /// assets/images/ancient_egypt_era_cover.png
@@ -129,6 +230,14 @@ class Assets
   /// Assets for ancientEgyptDetails_2
   /// assets/images/ancient_egypt_details_2.png
   static const String ancientEgyptDetails_2 = "assets/images/ancient_egypt_details_2.png";
+
+  /// Assets for ancientEgyptDetails_3
+  /// assets/images/ancient_egypt_details_3.jpg
+  static const String ancientEgyptDetails_3 = "assets/images/ancient_egypt_details_3.jpg";
+
+  /// Assets for ancientEgyptDetails_4
+  /// assets/images/ancient_egypt_details_4.jpg
+  static const String ancientEgyptDetails_4 = "assets/images/ancient_egypt_details_4.jpg";
 
   /// Assets for citizenRoleEgypt
   /// assets/images/citizen_role_image_egypt.png
@@ -241,5 +350,37 @@ class Assets
   /// Assets for communicationIcon
   /// assets/images/communication_icon.png
   static const String communicationIcon = "assets/images/communication_icon.png";
+
+  /// Assets for acropolisAthensPlace
+  /// assets/images/acropolis_athens_place.png
+  static const String acropolisAthensPlace = "assets/images/acropolis_athens_place.png";
+
+  /// Assets for epidaurusTheatrePlace
+  /// assets/images/epidaurus_theatre_place.png
+  static const String epidaurusTheatrePlace = "assets/images/epidaurus_theatre_place.png";
+
+  /// Assets for forbiddenCityGreecePlace
+  /// assets/images/forbidden_city_greece_place.png
+  static const String forbiddenCityGreecePlace = "assets/images/forbidden_city_greece_place.png";
+
+  /// Assets for forbiddenCityPlace
+  /// assets/images/forbidden_city_place.png
+  static const String forbiddenCityPlace = "assets/images/forbidden_city_place.png";
+
+  /// Assets for greatWallPlace
+  /// assets/images/great_wall_place.png
+  static const String greatWallPlace = "assets/images/great_wall_place.png";
+
+  /// Assets for heavenTemplatePlace
+  /// assets/images/heaven_template_place.png
+  static const String heavenTemplatePlace = "assets/images/heaven_template_place.png";
+
+  /// Assets for olympiaPlace
+  /// assets/images/olympia_place.png
+  static const String olympiaPlace = "assets/images/olympia_place.png";
+
+  /// Assets for terracottaArmyPlace
+  /// assets/images/terracotta_army_place.png
+  static const String terracottaArmyPlace = "assets/images/terracotta_army_place.png";
 
 }

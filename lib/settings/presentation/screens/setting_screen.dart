@@ -54,7 +54,20 @@ class SettingScreen extends StatelessWidget {
                           context: context,
                           onTap: ()
                           {
-                            context.navigate(EditProfileScreen());
+                            ProfileCubit.get(context).getUserData(context);
+                            if(state is GetProfileSuccessState)
+                            {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) => BlocProvider.value(
+                                    value: ProfileCubit.get(context),
+                                    child: const EditProfileScreen(),
+                                  ),
+                                ),
+                              );
+                            }
+                            // context.navigate(EditProfileScreen());
                           },
                         ),
                         SizedBox(

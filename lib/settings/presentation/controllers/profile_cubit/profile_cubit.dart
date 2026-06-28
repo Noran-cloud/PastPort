@@ -14,6 +14,8 @@ class ProfileCubit extends Cubit<ProfileStates> {
 
   var fNameController = TextEditingController();
   var lNameController = TextEditingController();
+  var mailController = TextEditingController();
+  var passController = TextEditingController();
 
   UserModel? userModel;
 

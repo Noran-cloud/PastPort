@@ -4,6 +4,7 @@ import 'package:pastport/core/extensions/helper_extension.dart';
 import 'package:pastport/core/utils/app_colors.dart';
 import 'package:pastport/core/utils/app_images.dart';
 import 'package:pastport/core/utils/app_strings.dart';
+import 'package:pastport/scenario_builder/models/era_model.dart';
 import 'package:pastport/scenario_builder/presentation/widgets/eras_screen_widgets/appBar_of_screen.dart';
 import 'package:pastport/scenario_builder/presentation/widgets/eras_screen_widgets/appbar_shadow_era_screen.dart';
 import 'package:pastport/scenario_builder/presentation/widgets/eras_screen_widgets/era_card_widget.dart';
@@ -28,23 +29,20 @@ class ErasScreen extends StatelessWidget {
           AppbarShadowEraScreen(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Column(
-              children: [
-                HeaderTextOfScreens(text: AppStrings.headOfHomeScreenText),
-                EraCardWidget(
-                  image: Assets.ancientEgyptEraCover,
-                  title: AppStrings.ancientEgyptTitleText,
-                  subtitle: AppStrings.ancientEgyptDescText,
-                ),
-                SizedBox(height: 8.0),
-                EraCardWidget(
-                  image: Assets.romanEmpireCover,
-                  title: AppStrings.romanEmpireTitleText,
-                  subtitle: AppStrings.romanEmpireDescText,
-                ),
-              ],
+            child: HeaderTextOfScreens(text: AppStrings.headOfHomeScreenText),
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: ListView.separated(
+                shrinkWrap: true,
+                itemCount: eras.length,
+                separatorBuilder: (context, index) => SizedBox(height: 8.0),
+                itemBuilder: (context, index) => EraCardWidget(eraModel: eras[index],),
+              ),
             ),
           ),
+          SizedBox(height: 8.0),
         ],
       ),
     );

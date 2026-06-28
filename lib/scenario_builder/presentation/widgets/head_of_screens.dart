@@ -19,7 +19,7 @@ class HeadOfCustomizationScreens extends StatelessWidget {
             {
               Navigator.pop(context);
             },
-            icon: Icon(Icons.arrow_back_ios,),
+            icon: Icon(Icons.arrow_back_ios, color: AppColors.secondaryColor,),
           ),
         ),
         SizedBox(width: 8.0,),

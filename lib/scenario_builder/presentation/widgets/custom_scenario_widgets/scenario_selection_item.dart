@@ -4,11 +4,11 @@ import 'package:pastport/core/utils/app_styles.dart';
 import 'package:pastport/scenario_builder/presentation/widgets/era_details_screen_widgets/list_view_item.dart';
 
 class ScenarioSelectionItem extends StatelessWidget {
-  const ScenarioSelectionItem({super.key, this.onTap, required this.image, required this.title});
+  const ScenarioSelectionItem({super.key, required this.onTap, required this.image, required this.title});
 
   final String image;
   final String title;
-  final void Function()? onTap;
+  final void Function() onTap;
 
   @override
   Widget build(BuildContext context) {

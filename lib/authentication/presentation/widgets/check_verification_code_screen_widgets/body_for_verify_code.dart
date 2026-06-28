@@ -1,4 +1,8 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pastport/authentication/presentation/controllers/send_code_cubit/code_cubit.dart';
+import 'package:pastport/authentication/presentation/controllers/verification_cubit/verification_cubit.dart';
+import 'package:pastport/authentication/presentation/controllers/verification_cubit/verification_states.dart';
 import 'package:pastport/authentication/presentation/widgets/check_verification_code_screen_widgets/otp_code_text_field.dart';
 import 'package:pastport/authentication/presentation/widgets/check_verification_code_screen_widgets/resend_code_row.dart';
 import 'package:pastport/authentication/presentation/widgets/custom_button.dart';
@@ -22,7 +26,13 @@ class BodyForVerifyCode extends StatelessWidget {
             buttonColor: AppColors.secondaryColor,
             radius: 12,
             height: 43,
-            onPressed: () {},
+            onPressed: ()
+            {
+              SendCodeCubit.get(context).verifyCode(
+                  code: "52056",
+                  mail: "omaraboelmaaty@std.mans.edu.eg"
+              );
+            },
             buttonText: AppStrings.verifyCodeText,
             textStyle: Styles.styleBold16(context).copyWith(fontSize: 16),
           ),
